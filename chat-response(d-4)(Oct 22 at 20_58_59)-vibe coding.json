@@ -1,0 +1,346 @@
+{
+  "updatedAt": "2026-10-22T15:28:59.361Z",
+  "createdAt": "2026-10-22T12:51:12.020Z",
+  "id": "z3KMT34gpCLWwBu6",
+  "name": "chat-response(d-4)",
+  "description": null,
+  "active": true,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {
+        "public": true,
+        "authentication": "basicAuth",
+        "initialMessages": "Hi there! 👋\nMy name is groom. How can I assist you today?",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.5,
+      "position": [
+        -272,
+        16
+      ],
+      "id": "e7129dc2-46c6-48cf-8253-bceabb55d2f5",
+      "name": "When chat message received",
+      "webhookId": "b5704b91-82a8-4d9b-b022-90fc5db96511",
+      "credentials": {
+        "httpBasicAuth": {
+          "id": "gNAfLLwmln9P9YFl",
+          "name": "Unnamed credential"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        -16,
+        0
+      ],
+      "id": "c826509a-8c97-4839-9cbc-aa0cf4981206",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.toolWikipedia",
+      "typeVersion": 1,
+      "position": [
+        208,
+        224
+      ],
+      "id": "404d9ae3-076e-4173-afe4-19024d60faf5",
+      "name": "Wikipedia"
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 2
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.4,
+      "position": [
+        64,
+        240
+      ],
+      "id": "ee3e76e1-6cde-414c-a3dc-711fd9e6166b",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "model": "openai/gpt-oss-safeguard-20b",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        -64,
+        224
+      ],
+      "id": "61e9f969-5edc-4a32-8c3f-454741eb6574",
+      "name": "Groq Chat Model",
+      "credentials": {
+        "groqApi": {
+          "id": "pB1PLZ46xQuFSZ8C",
+          "name": "Groq account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wikipedia": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Groq Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "staticData": null,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "nodeGroups": [],
+  "pinData": {},
+  "versionId": "e4ec536b-9d64-42d7-8c9f-77014cbb56ab",
+  "activeVersionId": "22afcf25-a00f-4371-a00f-81faf3d035d2",
+  "versionCounter": 49,
+  "triggerCount": 1,
+  "sourceWorkflowId": null,
+  "shared": [
+    {
+      "updatedAt": "2026-10-22T12:51:12.068Z",
+      "createdAt": "2026-10-22T12:51:12.068Z",
+      "role": "workflow:owner",
+      "workflowId": "z3KMT34gpCLWwBu6",
+      "projectId": "nzku603dpFMbeoND",
+      "project": {
+        "updatedAt": "2026-10-22T07:23:28.311Z",
+        "createdAt": "2026-10-22T05:43:29.150Z",
+        "id": "nzku603dpFMbeoND",
+        "name": "guru kiran <guruaif9014@gmial.com>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "customTelemetryTags": [],
+        "creatorId": "fcd70061-f27f-4a33-8dcf-1f537690981c"
+      }
+    }
+  ],
+  "tags": [],
+  "parentFolder": null,
+  "activeVersion": {
+    "updatedAt": "2026-10-22T15:22:09.000Z",
+    "createdAt": "2026-10-22T15:14:36.815Z",
+    "versionId": "22afcf25-a00f-4371-a00f-81faf3d035d2",
+    "workflowId": "z3KMT34gpCLWwBu6",
+    "nodes": [
+      {
+        "parameters": {
+          "public": true,
+          "authentication": "basicAuth",
+          "initialMessages": "Hi there! 👋\nMy name is groom. How can I assist you today?",
+          "options": {}
+        },
+        "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+        "typeVersion": 1.5,
+        "position": [
+          -272,
+          16
+        ],
+        "id": "e7129dc2-46c6-48cf-8253-bceabb55d2f5",
+        "name": "When chat message received",
+        "webhookId": "b5704b91-82a8-4d9b-b022-90fc5db96511",
+        "credentials": {
+          "httpBasicAuth": {
+            "id": "gNAfLLwmln9P9YFl",
+            "name": "Unnamed credential"
+          }
+        }
+      },
+      {
+        "parameters": {
+          "options": {}
+        },
+        "type": "@n8n/n8n-nodes-langchain.agent",
+        "typeVersion": 3.1,
+        "position": [
+          -16,
+          0
+        ],
+        "id": "c826509a-8c97-4839-9cbc-aa0cf4981206",
+        "name": "AI Agent"
+      },
+      {
+        "parameters": {},
+        "type": "@n8n/n8n-nodes-langchain.toolWikipedia",
+        "typeVersion": 1,
+        "position": [
+          208,
+          224
+        ],
+        "id": "404d9ae3-076e-4173-afe4-19024d60faf5",
+        "name": "Wikipedia"
+      },
+      {
+        "parameters": {
+          "contextWindowLength": 2
+        },
+        "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+        "typeVersion": 1.4,
+        "position": [
+          64,
+          240
+        ],
+        "id": "ee3e76e1-6cde-414c-a3dc-711fd9e6166b",
+        "name": "Simple Memory"
+      },
+      {
+        "parameters": {
+          "model": "openai/gpt-oss-safeguard-20b",
+          "options": {}
+        },
+        "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+        "typeVersion": 1,
+        "position": [
+          -64,
+          224
+        ],
+        "id": "61e9f969-5edc-4a32-8c3f-454741eb6574",
+        "name": "Groq Chat Model",
+        "credentials": {
+          "groqApi": {
+            "id": "pB1PLZ46xQuFSZ8C",
+            "name": "Groq account"
+          }
+        }
+      }
+    ],
+    "connections": {
+      "When chat message received": {
+        "main": [
+          [
+            {
+              "node": "AI Agent",
+              "type": "main",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Wikipedia": {
+        "ai_tool": [
+          [
+            {
+              "node": "AI Agent",
+              "type": "ai_tool",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Simple Memory": {
+        "ai_memory": [
+          [
+            {
+              "node": "AI Agent",
+              "type": "ai_memory",
+              "index": 0
+            }
+          ]
+        ]
+      },
+      "Groq Chat Model": {
+        "ai_languageModel": [
+          [
+            {
+              "node": "AI Agent",
+              "type": "ai_languageModel",
+              "index": 0
+            }
+          ]
+        ]
+      }
+    },
+    "nodeGroups": [],
+    "authors": "guru kiran",
+    "name": "V1",
+    "description": "",
+    "autosaved": true,
+    "workflowPublishHistory": [
+      {
+        "createdAt": "2026-10-22T15:22:09.143Z",
+        "id": 1,
+        "workflowId": "z3KMT34gpCLWwBu6",
+        "versionId": "22afcf25-a00f-4371-a00f-81faf3d035d2",
+        "event": "activated",
+        "userId": "fcd70061-f27f-4a33-8dcf-1f537690981c"
+      }
+    ]
+  },
+  "scopes": [
+    "execution:delete",
+    "execution:list",
+    "execution:read",
+    "execution:reveal",
+    "workflow:create",
+    "workflow:delete",
+    "workflow:disableRedaction",
+    "workflow:enableRedaction",
+    "workflow:execute",
+    "workflow:execute-chat",
+    "workflow:export",
+    "workflow:import",
+    "workflow:list",
+    "workflow:move",
+    "workflow:publish",
+    "workflow:read",
+    "workflow:share",
+    "workflow:unpublish",
+    "workflow:unshare",
+    "workflow:update"
+  ],
+  "checksum": "a2cee016605c31d34119eeb8217d27b8863c312cc7642d2278ba74e18d0ca2d9"
+}
